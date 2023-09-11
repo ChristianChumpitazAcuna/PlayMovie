@@ -1,0 +1,23 @@
+<div class="bg-slate-900 flex justify-center p-3 gap-2">
+    <input [(ngModel)]="searchName" placeholder="Buscar" (input)="search()"
+        class="bg-slate-700 h-10 w-96 rounded-lg p-3 text-cyan-50">
+</div>
+
+<main class="grid gap-6 grid-cols-6 text-center p-8">
+
+    <div *ngFor="let movies of movies">
+        <article class="bg-slate-800 h-80 
+                        grid justify-items-center p-3
+                        border-2 border-slate-500 
+                        hover:bg-slate-900 hover:scale-105
+                        hover:border-slate-400">
+
+            <div class="overflow-hidden h-60">
+                <img class="object-cover" [src]="movies.posterUrl">
+            </div>
+
+            <h4 class="text-sky-100 text-sm ">{{ movies.title }}</h4>
+
+        </article>
+    </div>
+</main>
